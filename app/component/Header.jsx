@@ -28,7 +28,7 @@ function Header() {
             <MdQueryStats size={30} />
           </div>
           <div>
-            <Button text={"Sign out"} />
+            <Button text={"Sign out"} type={"red"} />
           </div>
         </nav>
       </div>
