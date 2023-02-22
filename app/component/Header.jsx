@@ -6,7 +6,7 @@ import Button from "./Button";
 
 function Header() {
   return (
-    <header className="container mx-auto max-w-3xl px-6 py-6">
+    <header className="container mx-auto max-w-3xl px-6 py-6 ">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           {/* user image */}
@@ -23,9 +23,9 @@ function Header() {
           <small>Olá, usuário</small>
         </div>
 
-        <nav className="flex gap-2">
+        <nav className="flex items-center gap-4">
           <div>
-            <MdQueryStats size={30} />
+            <MdQueryStats size={25} />
           </div>
           <div>
             <Button text={"Sign out"} type={"red"} />

@@ -9,7 +9,7 @@ export default function RootLayout({ children }) {
         head.js. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body className="bg-slate-900 text-white">
+      <body className="relative bg-slate-900 text-white">
         <Header />
         {children}
       </body>
