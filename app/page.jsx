@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import { Inter } from "@next/font/google";
 import Button from "./component/Button";
 import { currencyFormater } from "@/lib/utils";
@@ -48,12 +47,40 @@ const DUMMY = [
 ];
 
 export default function Home() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showAddIncomeModel, setshowAddIncomeModel] = useState(false);
   return (
     <>
-      <Modal show={isModalOpen} onClose={setIsModalOpen}>
-        Hello world
+      {/* add income modal */}
+      <Modal show={showAddIncomeModel} onClose={setshowAddIncomeModel}>
+        <form className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4">
+            <label htmlFor="amount">Income Amount</label>
+            <input
+              type="number"
+              name="amount"
+              min={0.01}
+              step={0.01}
+              placeholder="Enter income amount"
+              required
+              className="rounded-lg bg-slate-600 px-4 py-2"
+            />
+          </div>
+          <div className="flex flex-col gap-4">
+            <label htmlFor="description">Description</label>
+            <input
+              type="number"
+              name="description"
+              placeholder="Enter description"
+              required
+              className="rounded-lg bg-slate-600 px-4 py-2"
+            />
+            <button className="w-1/3 rounded-lg bg-slate-600 px-4 py-2">
+              Add amount
+            </button>
+          </div>
+        </form>
       </Modal>
+
       <main className="container mx-auto max-w-3xl px-6 py-6 ">
         {/* show current finance balance, uses util to format the currency  */}
         <section className="py-3">
@@ -64,7 +91,13 @@ export default function Home() {
         {/* add expenses/income  */}
         <section className="flex items-center py-3">
           <Button type={""} text={"Expenses (-)"} hover={true} />
-          <Button type={"blue"} text={"Income (+)"} hover={true} />
+          <Button
+            type={"blue"}
+            text={"Income (+)"}
+            hover={true}
+            show={showAddIncomeModel}
+            onClose={setshowAddIncomeModel}
+          />
         </section>
 
         {/* detailed expenses */}
