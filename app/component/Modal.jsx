@@ -6,10 +6,10 @@ function Modal({ show, onClose, children }) {
   return (
     <div
       className={`${
-        show ? "transform: translate-x-[-200%]" : "transform: translate-x-0"
-      }  absolute top-1/2 left-1/2 z-10 h-auto w-[620px] -translate-x-1/2 -translate-y-1/2 drop-shadow-xl transition-all duration-500`}
+        show ? "transform: translate-x-[200%]" : "transform: translate-x-0"
+      }  absolute top-0 left-0 z-30 h-[80vh] w-full drop-shadow-xl transition-all duration-500`}
     >
-      <div className="container mx-auto h-1/3 max-w-lg rounded-lg bg-slate-800 py-6 px-4">
+      <div className="container mx-auto h-full max-w-lg rounded-lg bg-slate-800 py-6 px-4">
         <button
           onClick={() => {
             onClose(true);
